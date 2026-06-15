@@ -1,34 +1,50 @@
 <!DOCTYPE html> 
 <html>
-  <title>
-    Mehlam's Learning
-  </title>
+  <head>
+    <title>Mehlam's Learning</title>
+    
+    <style>
+      button {
+        /* FIXED: Changed to 'background', removed '5px 10px', fixed '90deg', added semicolon */
+        background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+        
+        /* FIXED: Added semicolon */
+        color: purple;
+        
+        /* FIXED: Put the 5px 10px spacing here with the color, added semicolon */
+        box-shadow: 5px 10px darkblue; 
+        
+        /* Optional: Makes the button large enough to actually see the rainbow */
+        padding: 15px 30px;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
   <body>
     <header>
       Testing a simple clicker
     </header>
     <br>
-    <button onclick = "increaseScore(1)">
+    
+    <button onclick="increaseScore(1)">
       Increase Score
     </button>
     <br>
-    <p id = "points">
-    </p>
-    <style>
-      button{
-        background-color: 5px 10px linear-gradient(90 deg,
-                red, orange, yellow, green, blue, indigo, violet)
-        color: purple
-        box-shadow: darkblue 
-      }
-    </style>
+    
+    <p id="points">0</p>
+    
     <script>
-      let score = 0
+      let score = 0;
+      
       function increaseScore(amount){
-     let increaseSound = new Audio("increase.mp3")
-        score = score+1*amount
-        document.getElementById("points").textContent = score
-        increaseSound.play()
+        let increaseSound = new Audio("increase.mp3");
+        score = score + 1 * amount;
+        document.getElementById("points").textContent = score;
+        increaseSound.play();
       }
     </script>
   </body>
