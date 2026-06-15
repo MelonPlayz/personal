@@ -18,7 +18,8 @@
       let score = 0
       function increaseScore(amount){
      let increaseSound = new Audio("increase.mp3")
-        document.getElementById("points").textContent = score+(1*amount)
+        score = score+1*amount
+        document.getElementById("points").textContent = score
         increaseSound.play()
       }
     </script>
